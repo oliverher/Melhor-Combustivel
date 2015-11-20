@@ -1,3 +1,4 @@
+package core;
 
 public class Calculo {
 	private double alcool, gasolina, resultado;

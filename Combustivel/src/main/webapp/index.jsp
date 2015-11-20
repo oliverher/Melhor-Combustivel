@@ -30,7 +30,21 @@
 			  <br/>
 			  <button class="btn btn-lg btn-primary btn-block" type="submit">Calcular</button>  			
 			  <br/>
-			  <input type="text" class="form-control" name="Resultado" placeholder="Resultado" autofocus="" />
+			  <input type="text" class="form-control" placeholder="Resultado" autofocus="" value="
+ <%
+            //Obtendo a variável definida no servlet.
+            core.Calculo calculoPerformace = (core.Calculo) request.getAttribute("Calcular");
+            //Se parâmetros inválidos, ...
+            if (calculoPerformace.getGasolina() == 0 || calculoPerformace.getAlcool() == 0) {
+%>
+Entre com os valores diferente de ZERO
+<%
+            } else {
+            	out.print(calculoPerformace.performace());
+            	
+            }
+%>
+			  "/>
 		
 		</form>			
 	</div>
